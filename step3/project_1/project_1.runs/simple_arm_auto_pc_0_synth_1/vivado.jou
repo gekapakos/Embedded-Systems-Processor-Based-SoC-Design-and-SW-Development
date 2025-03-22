@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Apr  9 11:41:56 2024
+# Process ID: 32653
+# Current directory: /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step1/interrupt_arm/lab2_interrupt_arm/lab2_interrupt_arm.runs/simple_arm_auto_pc_0_synth_1
+# Command line: vivado -log simple_arm_auto_pc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source simple_arm_auto_pc_0.tcl
+# Log file: /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step1/interrupt_arm/lab2_interrupt_arm/lab2_interrupt_arm.runs/simple_arm_auto_pc_0_synth_1/simple_arm_auto_pc_0.vds
+# Journal file: /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step1/interrupt_arm/lab2_interrupt_arm/lab2_interrupt_arm.runs/simple_arm_auto_pc_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source simple_arm_auto_pc_0.tcl -notrace

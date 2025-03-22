@@ -1,0 +1,45 @@
+#include "timer_util.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "xparameters.h"
+#include "xgpio.h"
+//#include "xutil.h"
+
+#define N 10
+
+int main(int argc, char* argv[])
+{
+	int a[N][N], b[N][N], c[N][N];
+//	int sum;
+
+	for (int i = 0; i < N; i++)
+	{
+		for(int j = 0; j < N; j++)
+		{
+			a[i][j] = 1;
+			b[i][j] = 1;
+			c[i][j] = 0;
+		}
+	}
+
+	start_time();
+	for (int i = 0; i < N; i++)
+	{
+		for (int k = 0; k < N; k++)
+		{
+//			sum = 0;
+			for (int j = 0; j < N; j++)
+			{
+				c[i][j] += a[i][k] * b[k][j];
+			}
+//			c[i][j] = sum;
+			xil_printf("%d ", c[i][k]);
+		}
+		xil_printf("\r\n");
+	}
+	stop_time();
+
+	xil_printf("The code spent %lld tics\r\n", get_time());
+
+	return 0;
+}

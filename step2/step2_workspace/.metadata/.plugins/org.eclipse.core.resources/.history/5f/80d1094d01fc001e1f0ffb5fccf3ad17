@@ -1,0 +1,37 @@
+#include "timer_util.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "xparameters.h"
+#include "xgpio.h"
+//#include "xutil.h"
+
+#define N 700
+
+int main(int argc, char* argv[])
+{
+	double a[N][N], b[N][N], res[N][N];
+
+	for (int i = 0; i < N; i++)
+	{
+		for(int j = 0; j < N; j++)
+		{
+			a[i][j] = rand() / 33;
+			b[i][j] = rand() / 33;
+			res[i][j] = 0;
+		}
+	}
+
+	start_time();
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			res[i][j] += a[i][j] * b[i][j];
+		}
+	}
+	stop_time();
+
+	xil_printf("The code spent %lld secs\r\n", time_in_secs(get_time()));
+
+	return 0;
+}

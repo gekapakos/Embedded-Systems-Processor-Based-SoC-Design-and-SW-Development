@@ -1,0 +1,2437 @@
+13:24:56 INFO  : Launching XSCT server: xsct -n  -interactive /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/temp_xsdb_launch_script.tcl
+13:24:56 INFO  : Registering command handlers for Vitis TCF services
+13:24:59 INFO  : Platform repository initialization has completed.
+13:25:00 INFO  : XSCT server has started successfully.
+13:25:00 INFO  : Successfully done setting XSCT server connection channel  
+13:25:00 INFO  : plnx-install-location is set to ''
+13:25:00 INFO  : Successfully done setting workspace for the tool. 
+13:25:00 INFO  : Successfully done query RDI_DATADIR 
+13:25:58 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+13:25:58 INFO  : Result from executing command 'getPlatforms': zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+13:26:24 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+13:26:24 INFO  : Result from executing command 'getPlatforms': fpadd_arm_plat|/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/fpadd_arm_plat.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+13:27:50 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+13:27:56 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+13:29:03 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+13:29:18 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+13:29:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:29:42 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+13:29:42 INFO  : 'jtag frequency' command is executed.
+13:29:42 INFO  : Context for 'APU' is selected.
+13:29:42 INFO  : System reset is completed.
+13:29:45 INFO  : 'after 3000' command is executed.
+13:29:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+13:29:48 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+13:29:48 INFO  : Context for 'APU' is selected.
+13:29:48 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+13:29:48 INFO  : 'configparams force-mem-access 1' command is executed.
+13:29:48 INFO  : Context for 'APU' is selected.
+13:29:48 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+13:29:48 INFO  : 'ps7_init' command is executed.
+13:29:48 INFO  : 'ps7_post_config' command is executed.
+13:29:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:29:48 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:29:48 INFO  : 'configparams force-mem-access 0' command is executed.
+13:29:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:29:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:29:48 INFO  : 'con' command is executed.
+13:29:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:29:48 INFO  : Disconnected from the channel tcfchan#5.
+13:32:10 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+13:32:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:32:40 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+13:32:40 INFO  : 'jtag frequency' command is executed.
+13:32:40 INFO  : Context for 'APU' is selected.
+13:32:40 INFO  : System reset is completed.
+13:32:43 INFO  : 'after 3000' command is executed.
+13:32:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+13:32:46 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+13:32:46 INFO  : Context for 'APU' is selected.
+13:32:46 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+13:32:46 INFO  : 'configparams force-mem-access 1' command is executed.
+13:32:46 INFO  : Context for 'APU' is selected.
+13:32:46 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+13:32:46 INFO  : 'ps7_init' command is executed.
+13:32:46 INFO  : 'ps7_post_config' command is executed.
+13:32:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:32:46 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:32:46 INFO  : 'configparams force-mem-access 0' command is executed.
+13:32:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:32:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:32:46 INFO  : 'con' command is executed.
+13:32:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:32:46 INFO  : Disconnected from the channel tcfchan#7.
+13:51:01 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+13:51:01 INFO  : Result from executing command 'getPlatforms': zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+13:51:29 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+13:51:29 INFO  : Result from executing command 'getPlatforms': fpadd_arm_plat|/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/fpadd_arm_plat.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+13:53:44 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+13:54:10 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+13:54:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:54:29 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+13:54:29 INFO  : 'jtag frequency' command is executed.
+13:54:29 INFO  : Context for 'APU' is selected.
+13:54:29 INFO  : System reset is completed.
+13:54:32 INFO  : 'after 3000' command is executed.
+13:54:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+13:54:35 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+13:54:35 INFO  : Context for 'APU' is selected.
+13:54:35 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+13:54:35 INFO  : 'configparams force-mem-access 1' command is executed.
+13:54:35 INFO  : Context for 'APU' is selected.
+13:54:35 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+13:54:35 INFO  : 'ps7_init' command is executed.
+13:54:35 INFO  : 'ps7_post_config' command is executed.
+13:54:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:54:35 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:54:35 INFO  : 'configparams force-mem-access 0' command is executed.
+13:54:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:54:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:54:35 INFO  : 'con' command is executed.
+13:54:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:54:35 INFO  : Disconnected from the channel tcfchan#11.
+13:56:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:56:33 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+13:56:33 INFO  : 'jtag frequency' command is executed.
+13:56:33 INFO  : Context for 'APU' is selected.
+13:56:33 INFO  : System reset is completed.
+13:56:36 INFO  : 'after 3000' command is executed.
+13:56:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+13:56:38 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+13:56:38 INFO  : Context for 'APU' is selected.
+13:56:38 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+13:56:38 INFO  : 'configparams force-mem-access 1' command is executed.
+13:56:38 INFO  : Context for 'APU' is selected.
+13:56:38 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+13:56:39 INFO  : 'ps7_init' command is executed.
+13:56:39 INFO  : 'ps7_post_config' command is executed.
+13:56:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:56:39 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:56:39 INFO  : 'configparams force-mem-access 0' command is executed.
+13:56:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:56:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:56:39 INFO  : 'con' command is executed.
+13:56:39 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:56:39 INFO  : Disconnected from the channel tcfchan#12.
+13:59:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:59:39 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+13:59:39 INFO  : 'jtag frequency' command is executed.
+13:59:39 INFO  : Context for 'APU' is selected.
+13:59:39 INFO  : System reset is completed.
+13:59:42 INFO  : 'after 3000' command is executed.
+13:59:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+13:59:44 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+13:59:44 INFO  : Context for 'APU' is selected.
+13:59:44 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+13:59:44 INFO  : 'configparams force-mem-access 1' command is executed.
+13:59:44 INFO  : Context for 'APU' is selected.
+13:59:44 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+13:59:45 INFO  : 'ps7_init' command is executed.
+13:59:45 INFO  : 'ps7_post_config' command is executed.
+13:59:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:45 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:59:45 INFO  : 'configparams force-mem-access 0' command is executed.
+13:59:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:59:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:59:45 INFO  : 'con' command is executed.
+13:59:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:59:45 INFO  : Disconnected from the channel tcfchan#13.
+13:59:47 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+13:59:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:59:54 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+13:59:54 INFO  : 'jtag frequency' command is executed.
+13:59:54 INFO  : Context for 'APU' is selected.
+13:59:55 INFO  : System reset is completed.
+13:59:58 INFO  : 'after 3000' command is executed.
+13:59:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:00:00 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:00:00 INFO  : Context for 'APU' is selected.
+14:00:00 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:00:00 INFO  : 'configparams force-mem-access 1' command is executed.
+14:00:00 INFO  : Context for 'APU' is selected.
+14:00:00 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:00:00 INFO  : 'ps7_init' command is executed.
+14:00:00 INFO  : 'ps7_post_config' command is executed.
+14:00:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:00:00 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:00:00 INFO  : 'configparams force-mem-access 0' command is executed.
+14:00:00 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:00:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:00:00 INFO  : 'con' command is executed.
+14:00:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:00:00 INFO  : Disconnected from the channel tcfchan#14.
+14:10:11 INFO  : Hardware specification for platform project 'fpadd_arm_plat' is updated.
+14:10:27 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+14:10:27 INFO  : Result from executing command 'getPlatforms': fpadd_arm_plat|/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/fpadd_arm_plat.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+14:10:41 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:10:45 INFO  : The hardware specfication used by project 'fpadd_arm_app' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+14:10:45 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit' stored in project is removed.
+14:10:46 INFO  : The updated bitstream files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream' in project 'fpadd_arm_app'.
+14:10:46 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' stored in project is removed.
+14:10:51 INFO  : The updated ps init files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit' in project 'fpadd_arm_app'.
+14:11:01 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:11:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:11:16 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+14:11:16 INFO  : 'jtag frequency' command is executed.
+14:11:16 INFO  : Context for 'APU' is selected.
+14:11:17 INFO  : System reset is completed.
+14:11:20 INFO  : 'after 3000' command is executed.
+14:11:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:11:22 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:11:22 INFO  : Context for 'APU' is selected.
+14:11:22 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:11:22 INFO  : 'configparams force-mem-access 1' command is executed.
+14:11:22 INFO  : Context for 'APU' is selected.
+14:11:22 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:11:22 INFO  : 'ps7_init' command is executed.
+14:11:22 INFO  : 'ps7_post_config' command is executed.
+14:11:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:23 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:11:23 INFO  : 'configparams force-mem-access 0' command is executed.
+14:11:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:11:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:11:23 INFO  : 'con' command is executed.
+14:11:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:11:23 INFO  : Disconnected from the channel tcfchan#17.
+14:22:33 INFO  : Hardware specification for platform project 'fpadd_arm_plat' is updated.
+14:22:47 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+14:22:47 INFO  : Result from executing command 'getPlatforms': fpadd_arm_plat|/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/fpadd_arm_plat.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+14:23:07 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:23:12 INFO  : The hardware specfication used by project 'fpadd_arm_app' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+14:23:12 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit' stored in project is removed.
+14:23:12 INFO  : The updated bitstream files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream' in project 'fpadd_arm_app'.
+14:23:12 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' stored in project is removed.
+14:23:17 INFO  : The updated ps init files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit' in project 'fpadd_arm_app'.
+14:23:33 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:23:58 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:23:59 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+14:23:59 INFO  : 'jtag frequency' command is executed.
+14:23:59 INFO  : Context for 'APU' is selected.
+14:23:59 INFO  : System reset is completed.
+14:24:02 INFO  : 'after 3000' command is executed.
+14:24:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:24:04 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:24:04 INFO  : Context for 'APU' is selected.
+14:24:04 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:24:04 INFO  : 'configparams force-mem-access 1' command is executed.
+14:24:04 INFO  : Context for 'APU' is selected.
+14:24:04 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:24:04 INFO  : 'ps7_init' command is executed.
+14:24:04 INFO  : 'ps7_post_config' command is executed.
+14:24:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:05 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:24:05 INFO  : 'configparams force-mem-access 0' command is executed.
+14:24:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:24:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:24:05 INFO  : 'con' command is executed.
+14:24:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:24:05 INFO  : Disconnected from the channel tcfchan#20.
+14:25:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:25:12 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+14:25:12 INFO  : 'jtag frequency' command is executed.
+14:25:12 INFO  : Context for 'APU' is selected.
+14:25:12 INFO  : System reset is completed.
+14:25:15 INFO  : 'after 3000' command is executed.
+14:25:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:25:18 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:25:18 INFO  : Context for 'APU' is selected.
+14:25:18 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:25:18 INFO  : 'configparams force-mem-access 1' command is executed.
+14:25:18 INFO  : Context for 'APU' is selected.
+14:25:18 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:25:18 INFO  : 'ps7_init' command is executed.
+14:25:18 INFO  : 'ps7_post_config' command is executed.
+14:25:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:25:18 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:25:18 INFO  : 'configparams force-mem-access 0' command is executed.
+14:25:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:25:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:25:18 INFO  : 'con' command is executed.
+14:25:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:25:18 INFO  : Disconnected from the channel tcfchan#21.
+14:34:48 INFO  : Hardware specification for platform project 'fpadd_arm_plat' is updated.
+14:35:01 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+14:35:01 INFO  : Result from executing command 'getPlatforms': fpadd_arm_plat|/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/fpadd_arm_plat.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+14:35:13 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:35:17 INFO  : The hardware specfication used by project 'fpadd_arm_app' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+14:35:17 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit' stored in project is removed.
+14:35:18 INFO  : The updated bitstream files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream' in project 'fpadd_arm_app'.
+14:35:18 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' stored in project is removed.
+14:35:22 INFO  : The updated ps init files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit' in project 'fpadd_arm_app'.
+14:35:39 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:35:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:35:49 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+14:35:49 INFO  : 'jtag frequency' command is executed.
+14:35:49 INFO  : Context for 'APU' is selected.
+14:35:49 INFO  : System reset is completed.
+14:35:52 INFO  : 'after 3000' command is executed.
+14:35:52 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:35:54 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:35:54 INFO  : Context for 'APU' is selected.
+14:35:54 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:35:54 INFO  : 'configparams force-mem-access 1' command is executed.
+14:35:54 INFO  : Context for 'APU' is selected.
+14:35:54 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:35:54 INFO  : 'ps7_init' command is executed.
+14:35:54 INFO  : 'ps7_post_config' command is executed.
+14:35:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:35:55 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:35:55 INFO  : 'configparams force-mem-access 0' command is executed.
+14:35:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:35:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:35:55 INFO  : 'con' command is executed.
+14:35:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:35:55 INFO  : Disconnected from the channel tcfchan#24.
+14:45:02 INFO  : Hardware specification for platform project 'fpadd_arm_plat' is updated.
+14:45:13 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+14:45:13 INFO  : Result from executing command 'getPlatforms': fpadd_arm_plat|/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/fpadd_arm_plat.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+14:45:30 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:45:34 INFO  : The hardware specfication used by project 'fpadd_arm_app' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+14:45:34 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit' stored in project is removed.
+14:45:34 INFO  : The updated bitstream files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream' in project 'fpadd_arm_app'.
+14:45:34 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' stored in project is removed.
+14:45:39 INFO  : The updated ps init files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit' in project 'fpadd_arm_app'.
+14:45:52 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:46:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:46:00 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+14:46:00 INFO  : 'jtag frequency' command is executed.
+14:46:00 INFO  : Context for 'APU' is selected.
+14:46:00 INFO  : System reset is completed.
+14:46:03 INFO  : 'after 3000' command is executed.
+14:46:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:46:06 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:46:06 INFO  : Context for 'APU' is selected.
+14:46:06 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:46:06 INFO  : 'configparams force-mem-access 1' command is executed.
+14:46:06 INFO  : Context for 'APU' is selected.
+14:46:06 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:46:06 INFO  : 'ps7_init' command is executed.
+14:46:06 INFO  : 'ps7_post_config' command is executed.
+14:46:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:46:06 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:46:06 INFO  : 'configparams force-mem-access 0' command is executed.
+14:46:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:46:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:46:06 INFO  : 'con' command is executed.
+14:46:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:46:06 INFO  : Disconnected from the channel tcfchan#27.
+14:51:21 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:51:34 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:51:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:51:43 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+14:51:43 INFO  : 'jtag frequency' command is executed.
+14:51:43 INFO  : Context for 'APU' is selected.
+14:51:43 INFO  : System reset is completed.
+14:51:46 INFO  : 'after 3000' command is executed.
+14:51:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:51:48 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:51:48 INFO  : Context for 'APU' is selected.
+14:51:48 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:51:48 INFO  : 'configparams force-mem-access 1' command is executed.
+14:51:48 INFO  : Context for 'APU' is selected.
+14:51:48 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:51:48 INFO  : 'ps7_init' command is executed.
+14:51:48 INFO  : 'ps7_post_config' command is executed.
+14:51:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:51:49 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:51:49 INFO  : 'configparams force-mem-access 0' command is executed.
+14:51:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:51:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:51:49 INFO  : 'con' command is executed.
+14:51:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:51:49 INFO  : Disconnected from the channel tcfchan#29.
+14:53:04 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:53:23 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:53:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:53:29 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+14:53:29 INFO  : 'jtag frequency' command is executed.
+14:53:29 INFO  : Context for 'APU' is selected.
+14:53:29 INFO  : System reset is completed.
+14:53:32 INFO  : 'after 3000' command is executed.
+14:53:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:53:34 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:53:34 INFO  : Context for 'APU' is selected.
+14:53:35 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:53:35 INFO  : 'configparams force-mem-access 1' command is executed.
+14:53:35 INFO  : Context for 'APU' is selected.
+14:53:35 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:53:35 INFO  : 'ps7_init' command is executed.
+14:53:35 INFO  : 'ps7_post_config' command is executed.
+14:53:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:53:35 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:53:35 INFO  : 'configparams force-mem-access 0' command is executed.
+14:53:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:53:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:53:35 INFO  : 'con' command is executed.
+14:53:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:53:35 INFO  : Disconnected from the channel tcfchan#31.
+14:56:23 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:56:56 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:57:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:57:07 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+14:57:07 INFO  : 'jtag frequency' command is executed.
+14:57:07 INFO  : Context for 'APU' is selected.
+14:57:07 INFO  : System reset is completed.
+14:57:10 INFO  : 'after 3000' command is executed.
+14:57:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:57:13 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:57:13 INFO  : Context for 'APU' is selected.
+14:57:13 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:57:13 INFO  : 'configparams force-mem-access 1' command is executed.
+14:57:13 INFO  : Context for 'APU' is selected.
+14:57:13 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:57:13 INFO  : 'ps7_init' command is executed.
+14:57:13 INFO  : 'ps7_post_config' command is executed.
+14:57:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:57:13 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:57:13 INFO  : 'configparams force-mem-access 0' command is executed.
+14:57:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:57:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:57:13 INFO  : 'con' command is executed.
+14:57:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:57:13 INFO  : Disconnected from the channel tcfchan#33.
+14:58:48 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+14:59:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:59:13 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+14:59:13 INFO  : 'jtag frequency' command is executed.
+14:59:13 INFO  : Context for 'APU' is selected.
+14:59:13 INFO  : System reset is completed.
+14:59:16 INFO  : 'after 3000' command is executed.
+14:59:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+14:59:18 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+14:59:18 INFO  : Context for 'APU' is selected.
+14:59:18 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+14:59:18 INFO  : 'configparams force-mem-access 1' command is executed.
+14:59:18 INFO  : Context for 'APU' is selected.
+14:59:18 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+14:59:19 INFO  : 'ps7_init' command is executed.
+14:59:19 INFO  : 'ps7_post_config' command is executed.
+14:59:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:59:19 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:59:19 INFO  : 'configparams force-mem-access 0' command is executed.
+14:59:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:59:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:59:19 INFO  : 'con' command is executed.
+14:59:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:59:19 INFO  : Disconnected from the channel tcfchan#35.
+14:59:46 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:00:04 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:00:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:00:17 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:00:17 INFO  : 'jtag frequency' command is executed.
+15:00:17 INFO  : Context for 'APU' is selected.
+15:00:17 INFO  : System reset is completed.
+15:00:20 INFO  : 'after 3000' command is executed.
+15:00:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:00:23 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:00:23 INFO  : Context for 'APU' is selected.
+15:00:23 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:00:23 INFO  : 'configparams force-mem-access 1' command is executed.
+15:00:23 INFO  : Context for 'APU' is selected.
+15:00:23 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:00:23 INFO  : 'ps7_init' command is executed.
+15:00:23 INFO  : 'ps7_post_config' command is executed.
+15:00:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:23 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:00:23 INFO  : 'configparams force-mem-access 0' command is executed.
+15:00:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:00:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:23 INFO  : 'con' command is executed.
+15:00:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:00:23 INFO  : Disconnected from the channel tcfchan#37.
+15:01:09 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:01:33 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:01:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:01:48 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:01:48 INFO  : 'jtag frequency' command is executed.
+15:01:48 INFO  : Context for 'APU' is selected.
+15:01:48 INFO  : System reset is completed.
+15:01:51 INFO  : 'after 3000' command is executed.
+15:01:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:01:53 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:01:53 INFO  : Context for 'APU' is selected.
+15:01:53 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:01:53 INFO  : 'configparams force-mem-access 1' command is executed.
+15:01:53 INFO  : Context for 'APU' is selected.
+15:01:53 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:01:53 INFO  : 'ps7_init' command is executed.
+15:01:53 INFO  : 'ps7_post_config' command is executed.
+15:01:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:01:53 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:01:54 INFO  : 'configparams force-mem-access 0' command is executed.
+15:01:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:01:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:01:54 INFO  : 'con' command is executed.
+15:01:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:01:54 INFO  : Disconnected from the channel tcfchan#39.
+15:02:48 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:03:06 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:03:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:03:12 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:03:12 INFO  : 'jtag frequency' command is executed.
+15:03:12 INFO  : Context for 'APU' is selected.
+15:03:12 INFO  : System reset is completed.
+15:03:15 INFO  : 'after 3000' command is executed.
+15:03:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:03:17 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:03:17 INFO  : Context for 'APU' is selected.
+15:03:17 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:03:17 INFO  : 'configparams force-mem-access 1' command is executed.
+15:03:17 INFO  : Context for 'APU' is selected.
+15:03:17 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:03:17 INFO  : 'ps7_init' command is executed.
+15:03:17 INFO  : 'ps7_post_config' command is executed.
+15:03:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:03:17 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:03:18 INFO  : 'configparams force-mem-access 0' command is executed.
+15:03:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:03:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:03:18 INFO  : 'con' command is executed.
+15:03:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:03:18 INFO  : Disconnected from the channel tcfchan#41.
+15:04:00 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:04:15 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:04:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:04:24 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:04:24 INFO  : 'jtag frequency' command is executed.
+15:04:24 INFO  : Context for 'APU' is selected.
+15:04:24 INFO  : System reset is completed.
+15:04:27 INFO  : 'after 3000' command is executed.
+15:04:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:04:29 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:04:29 INFO  : Context for 'APU' is selected.
+15:04:29 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:04:29 INFO  : 'configparams force-mem-access 1' command is executed.
+15:04:30 INFO  : Context for 'APU' is selected.
+15:04:30 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:04:30 INFO  : 'ps7_init' command is executed.
+15:04:30 INFO  : 'ps7_post_config' command is executed.
+15:04:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:04:30 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:04:30 INFO  : 'configparams force-mem-access 0' command is executed.
+15:04:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:04:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:04:30 INFO  : 'con' command is executed.
+15:04:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:04:30 INFO  : Disconnected from the channel tcfchan#43.
+15:05:10 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:05:29 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:05:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:05:34 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:05:34 INFO  : 'jtag frequency' command is executed.
+15:05:34 INFO  : Context for 'APU' is selected.
+15:05:34 INFO  : System reset is completed.
+15:05:37 INFO  : 'after 3000' command is executed.
+15:05:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:05:39 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:05:39 INFO  : Context for 'APU' is selected.
+15:05:39 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:05:39 INFO  : 'configparams force-mem-access 1' command is executed.
+15:05:39 INFO  : Context for 'APU' is selected.
+15:05:39 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:05:40 INFO  : 'ps7_init' command is executed.
+15:05:40 INFO  : 'ps7_post_config' command is executed.
+15:05:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:05:40 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:05:40 INFO  : 'configparams force-mem-access 0' command is executed.
+15:05:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:05:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:05:40 INFO  : 'con' command is executed.
+15:05:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:05:40 INFO  : Disconnected from the channel tcfchan#45.
+15:06:59 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:07:19 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:07:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:07:24 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:07:24 INFO  : 'jtag frequency' command is executed.
+15:07:24 INFO  : Context for 'APU' is selected.
+15:07:25 INFO  : System reset is completed.
+15:07:28 INFO  : 'after 3000' command is executed.
+15:07:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:07:30 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:07:30 INFO  : Context for 'APU' is selected.
+15:07:30 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:07:30 INFO  : 'configparams force-mem-access 1' command is executed.
+15:07:30 INFO  : Context for 'APU' is selected.
+15:07:30 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:07:30 INFO  : 'ps7_init' command is executed.
+15:07:30 INFO  : 'ps7_post_config' command is executed.
+15:07:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:07:30 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:07:30 INFO  : 'configparams force-mem-access 0' command is executed.
+15:07:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:07:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:07:30 INFO  : 'con' command is executed.
+15:07:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:07:30 INFO  : Disconnected from the channel tcfchan#47.
+15:08:47 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:10:23 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:10:50 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:10:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:10:59 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:10:59 INFO  : 'jtag frequency' command is executed.
+15:10:59 INFO  : Context for 'APU' is selected.
+15:10:59 INFO  : System reset is completed.
+15:11:02 INFO  : 'after 3000' command is executed.
+15:11:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:11:04 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:11:04 INFO  : Context for 'APU' is selected.
+15:11:04 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:11:04 INFO  : 'configparams force-mem-access 1' command is executed.
+15:11:04 INFO  : Context for 'APU' is selected.
+15:11:04 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:11:05 INFO  : 'ps7_init' command is executed.
+15:11:05 INFO  : 'ps7_post_config' command is executed.
+15:11:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:11:05 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:11:05 INFO  : 'configparams force-mem-access 0' command is executed.
+15:11:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:11:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:11:05 INFO  : 'con' command is executed.
+15:11:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:11:05 INFO  : Disconnected from the channel tcfchan#50.
+15:18:53 INFO  : Hardware specification for platform project 'fpadd_arm_plat' is updated.
+15:19:05 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+15:19:05 INFO  : Result from executing command 'getPlatforms': fpadd_arm_plat|/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/fpadd_arm_plat.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+15:19:13 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:19:17 INFO  : The hardware specfication used by project 'fpadd_arm_app' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+15:19:17 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit' stored in project is removed.
+15:19:18 INFO  : The updated bitstream files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream' in project 'fpadd_arm_app'.
+15:19:18 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' stored in project is removed.
+15:19:23 INFO  : The updated ps init files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit' in project 'fpadd_arm_app'.
+15:19:40 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:19:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:19:46 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:19:46 INFO  : 'jtag frequency' command is executed.
+15:19:46 INFO  : Context for 'APU' is selected.
+15:19:46 INFO  : System reset is completed.
+15:19:49 INFO  : 'after 3000' command is executed.
+15:19:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:19:52 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:19:52 INFO  : Context for 'APU' is selected.
+15:19:52 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:19:52 INFO  : 'configparams force-mem-access 1' command is executed.
+15:19:52 INFO  : Context for 'APU' is selected.
+15:19:52 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:19:52 INFO  : 'ps7_init' command is executed.
+15:19:52 INFO  : 'ps7_post_config' command is executed.
+15:19:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:19:52 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:19:52 INFO  : 'configparams force-mem-access 0' command is executed.
+15:19:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:19:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:19:52 INFO  : 'con' command is executed.
+15:19:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:19:52 INFO  : Disconnected from the channel tcfchan#53.
+15:28:52 INFO  : Hardware specification for platform project 'fpadd_arm_plat' is updated.
+15:29:05 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+15:29:05 INFO  : Result from executing command 'getPlatforms': fpadd_arm_plat|/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/fpadd_arm_plat.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+15:29:25 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:29:29 INFO  : The hardware specfication used by project 'fpadd_arm_app' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+15:29:29 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit' stored in project is removed.
+15:29:30 INFO  : The updated bitstream files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream' in project 'fpadd_arm_app'.
+15:29:30 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' stored in project is removed.
+15:29:35 INFO  : The updated ps init files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit' in project 'fpadd_arm_app'.
+15:30:04 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:30:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:30:11 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:30:11 INFO  : 'jtag frequency' command is executed.
+15:30:11 INFO  : Context for 'APU' is selected.
+15:30:11 INFO  : System reset is completed.
+15:30:14 INFO  : 'after 3000' command is executed.
+15:30:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:30:17 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:30:17 INFO  : Context for 'APU' is selected.
+15:30:17 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:30:17 INFO  : 'configparams force-mem-access 1' command is executed.
+15:30:17 INFO  : Context for 'APU' is selected.
+15:30:17 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:30:17 INFO  : 'ps7_init' command is executed.
+15:30:17 INFO  : 'ps7_post_config' command is executed.
+15:30:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:17 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:30:17 INFO  : 'configparams force-mem-access 0' command is executed.
+15:30:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:30:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:17 INFO  : 'con' command is executed.
+15:30:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:30:17 INFO  : Disconnected from the channel tcfchan#56.
+15:30:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:30:34 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:30:34 INFO  : 'jtag frequency' command is executed.
+15:30:34 INFO  : Context for 'APU' is selected.
+15:30:34 INFO  : System reset is completed.
+15:30:37 INFO  : 'after 3000' command is executed.
+15:30:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:30:39 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:30:39 INFO  : Context for 'APU' is selected.
+15:30:39 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:30:39 INFO  : 'configparams force-mem-access 1' command is executed.
+15:30:39 INFO  : Context for 'APU' is selected.
+15:30:39 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:30:39 INFO  : 'ps7_init' command is executed.
+15:30:39 INFO  : 'ps7_post_config' command is executed.
+15:30:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:40 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:30:40 INFO  : 'configparams force-mem-access 0' command is executed.
+15:30:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:30:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:30:40 INFO  : 'con' command is executed.
+15:30:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:30:40 INFO  : Disconnected from the channel tcfchan#57.
+15:32:10 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:32:23 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:32:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:32:36 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:32:36 INFO  : 'jtag frequency' command is executed.
+15:32:36 INFO  : Context for 'APU' is selected.
+15:32:36 INFO  : System reset is completed.
+15:32:39 INFO  : 'after 3000' command is executed.
+15:32:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:32:42 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:32:42 INFO  : Context for 'APU' is selected.
+15:32:42 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:32:42 INFO  : 'configparams force-mem-access 1' command is executed.
+15:32:42 INFO  : Context for 'APU' is selected.
+15:32:42 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:32:42 INFO  : 'ps7_init' command is executed.
+15:32:42 INFO  : 'ps7_post_config' command is executed.
+15:32:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:32:42 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:32:42 INFO  : 'configparams force-mem-access 0' command is executed.
+15:32:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:32:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:32:42 INFO  : 'con' command is executed.
+15:32:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:32:42 INFO  : Disconnected from the channel tcfchan#59.
+15:33:46 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:34:02 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:34:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:34:08 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:34:08 INFO  : 'jtag frequency' command is executed.
+15:34:08 INFO  : Context for 'APU' is selected.
+15:34:08 INFO  : System reset is completed.
+15:34:11 INFO  : 'after 3000' command is executed.
+15:34:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:34:13 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:34:13 INFO  : Context for 'APU' is selected.
+15:34:13 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:34:13 INFO  : 'configparams force-mem-access 1' command is executed.
+15:34:13 INFO  : Context for 'APU' is selected.
+15:34:13 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:34:14 INFO  : 'ps7_init' command is executed.
+15:34:14 INFO  : 'ps7_post_config' command is executed.
+15:34:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:34:14 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:34:14 INFO  : 'configparams force-mem-access 0' command is executed.
+15:34:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:34:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:34:14 INFO  : 'con' command is executed.
+15:34:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:34:14 INFO  : Disconnected from the channel tcfchan#61.
+15:35:39 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:35:58 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:36:11 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:36:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:36:18 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:36:18 INFO  : 'jtag frequency' command is executed.
+15:36:18 INFO  : Context for 'APU' is selected.
+15:36:18 INFO  : System reset is completed.
+15:36:21 INFO  : 'after 3000' command is executed.
+15:36:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:36:23 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:36:23 INFO  : Context for 'APU' is selected.
+15:36:23 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:36:23 INFO  : 'configparams force-mem-access 1' command is executed.
+15:36:23 INFO  : Context for 'APU' is selected.
+15:36:23 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:36:23 INFO  : 'ps7_init' command is executed.
+15:36:23 INFO  : 'ps7_post_config' command is executed.
+15:36:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:36:24 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:36:24 INFO  : 'configparams force-mem-access 0' command is executed.
+15:36:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:36:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:36:24 INFO  : 'con' command is executed.
+15:36:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:36:24 INFO  : Disconnected from the channel tcfchan#63.
+15:37:31 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:37:47 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:37:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:37:52 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:37:52 INFO  : 'jtag frequency' command is executed.
+15:37:52 INFO  : Context for 'APU' is selected.
+15:37:53 INFO  : System reset is completed.
+15:37:56 INFO  : 'after 3000' command is executed.
+15:37:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:37:58 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:37:58 INFO  : Context for 'APU' is selected.
+15:37:58 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:37:58 INFO  : 'configparams force-mem-access 1' command is executed.
+15:37:58 INFO  : Context for 'APU' is selected.
+15:37:58 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:37:58 INFO  : 'ps7_init' command is executed.
+15:37:58 INFO  : 'ps7_post_config' command is executed.
+15:37:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:37:58 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:37:58 INFO  : 'configparams force-mem-access 0' command is executed.
+15:37:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:37:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:37:58 INFO  : 'con' command is executed.
+15:37:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:37:58 INFO  : Disconnected from the channel tcfchan#65.
+15:44:12 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:44:24 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:44:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:44:32 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:44:32 INFO  : 'jtag frequency' command is executed.
+15:44:32 INFO  : Context for 'APU' is selected.
+15:44:32 INFO  : System reset is completed.
+15:44:35 INFO  : 'after 3000' command is executed.
+15:44:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:44:37 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:44:37 INFO  : Context for 'APU' is selected.
+15:44:37 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:44:37 INFO  : 'configparams force-mem-access 1' command is executed.
+15:44:37 INFO  : Context for 'APU' is selected.
+15:44:37 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:44:38 INFO  : 'ps7_init' command is executed.
+15:44:38 INFO  : 'ps7_post_config' command is executed.
+15:44:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:44:38 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:44:38 INFO  : 'configparams force-mem-access 0' command is executed.
+15:44:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:44:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:44:38 INFO  : 'con' command is executed.
+15:44:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:44:38 INFO  : Disconnected from the channel tcfchan#67.
+15:45:15 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:45:40 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:45:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:45:57 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:45:57 INFO  : 'jtag frequency' command is executed.
+15:45:57 INFO  : Context for 'APU' is selected.
+15:45:57 INFO  : System reset is completed.
+15:46:00 INFO  : 'after 3000' command is executed.
+15:46:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:46:03 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:46:03 INFO  : Context for 'APU' is selected.
+15:46:03 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:46:03 INFO  : 'configparams force-mem-access 1' command is executed.
+15:46:03 INFO  : Context for 'APU' is selected.
+15:46:03 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:46:03 INFO  : 'ps7_init' command is executed.
+15:46:03 INFO  : 'ps7_post_config' command is executed.
+15:46:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:46:03 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:46:03 INFO  : 'configparams force-mem-access 0' command is executed.
+15:46:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:46:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:46:03 INFO  : 'con' command is executed.
+15:46:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:46:03 INFO  : Disconnected from the channel tcfchan#69.
+15:47:06 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:47:20 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:47:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:47:28 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:47:28 INFO  : 'jtag frequency' command is executed.
+15:47:28 INFO  : Context for 'APU' is selected.
+15:47:28 INFO  : System reset is completed.
+15:47:31 INFO  : 'after 3000' command is executed.
+15:47:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:47:34 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:47:34 INFO  : Context for 'APU' is selected.
+15:47:34 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:47:34 INFO  : 'configparams force-mem-access 1' command is executed.
+15:47:34 INFO  : Context for 'APU' is selected.
+15:47:34 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:47:34 INFO  : 'ps7_init' command is executed.
+15:47:34 INFO  : 'ps7_post_config' command is executed.
+15:47:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:47:34 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:47:34 INFO  : 'configparams force-mem-access 0' command is executed.
+15:47:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:47:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:47:34 INFO  : 'con' command is executed.
+15:47:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:47:34 INFO  : Disconnected from the channel tcfchan#71.
+15:48:29 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:48:48 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:48:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:48:55 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:48:55 INFO  : 'jtag frequency' command is executed.
+15:48:55 INFO  : Context for 'APU' is selected.
+15:48:55 INFO  : System reset is completed.
+15:48:58 INFO  : 'after 3000' command is executed.
+15:48:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:49:01 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:49:01 INFO  : Context for 'APU' is selected.
+15:49:01 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:49:01 INFO  : 'configparams force-mem-access 1' command is executed.
+15:49:01 INFO  : Context for 'APU' is selected.
+15:49:01 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:49:01 INFO  : 'ps7_init' command is executed.
+15:49:01 INFO  : 'ps7_post_config' command is executed.
+15:49:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:49:01 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:49:01 INFO  : 'configparams force-mem-access 0' command is executed.
+15:49:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:49:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:49:01 INFO  : 'con' command is executed.
+15:49:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:49:01 INFO  : Disconnected from the channel tcfchan#73.
+15:51:19 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:51:40 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:51:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:51:56 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:51:56 INFO  : 'jtag frequency' command is executed.
+15:51:56 INFO  : Context for 'APU' is selected.
+15:51:56 INFO  : System reset is completed.
+15:51:59 INFO  : 'after 3000' command is executed.
+15:51:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:52:02 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:52:02 INFO  : Context for 'APU' is selected.
+15:52:02 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:52:02 INFO  : 'configparams force-mem-access 1' command is executed.
+15:52:02 INFO  : Context for 'APU' is selected.
+15:52:02 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:52:02 INFO  : 'ps7_init' command is executed.
+15:52:02 INFO  : 'ps7_post_config' command is executed.
+15:52:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:52:02 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:52:02 INFO  : 'configparams force-mem-access 0' command is executed.
+15:52:02 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:52:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:52:02 INFO  : 'con' command is executed.
+15:52:02 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:52:02 INFO  : Disconnected from the channel tcfchan#75.
+15:54:00 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:54:52 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:54:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:55:00 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:55:00 INFO  : 'jtag frequency' command is executed.
+15:55:00 INFO  : Context for 'APU' is selected.
+15:55:00 INFO  : System reset is completed.
+15:55:03 INFO  : 'after 3000' command is executed.
+15:55:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:55:05 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:55:05 INFO  : Context for 'APU' is selected.
+15:55:05 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:55:05 INFO  : 'configparams force-mem-access 1' command is executed.
+15:55:05 INFO  : Context for 'APU' is selected.
+15:55:05 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:55:05 INFO  : 'ps7_init' command is executed.
+15:55:05 INFO  : 'ps7_post_config' command is executed.
+15:55:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:55:06 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:55:06 INFO  : 'configparams force-mem-access 0' command is executed.
+15:55:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:55:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:55:06 INFO  : 'con' command is executed.
+15:55:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:55:06 INFO  : Disconnected from the channel tcfchan#77.
+15:56:15 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:56:34 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+15:56:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:56:46 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+15:56:46 INFO  : 'jtag frequency' command is executed.
+15:56:46 INFO  : Context for 'APU' is selected.
+15:56:46 INFO  : System reset is completed.
+15:56:49 INFO  : 'after 3000' command is executed.
+15:56:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+15:56:52 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+15:56:52 INFO  : Context for 'APU' is selected.
+15:56:52 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+15:56:52 INFO  : 'configparams force-mem-access 1' command is executed.
+15:56:52 INFO  : Context for 'APU' is selected.
+15:56:52 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+15:56:52 INFO  : 'ps7_init' command is executed.
+15:56:52 INFO  : 'ps7_post_config' command is executed.
+15:56:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:56:52 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:56:52 INFO  : 'configparams force-mem-access 0' command is executed.
+15:56:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:56:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:56:52 INFO  : 'con' command is executed.
+15:56:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:56:52 INFO  : Disconnected from the channel tcfchan#79.
+16:05:38 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:06:03 INFO  : Hardware specification for platform project 'fpadd_arm_plat' is updated.
+16:06:22 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+16:06:22 INFO  : Result from executing command 'getPlatforms': fpadd_arm_plat|/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/fpadd_arm_plat.xpfm;zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+16:06:48 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:06:52 INFO  : The hardware specfication used by project 'fpadd_arm_app' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+16:06:52 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit' stored in project is removed.
+16:06:52 INFO  : The updated bitstream files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream' in project 'fpadd_arm_app'.
+16:06:52 INFO  : The file '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' stored in project is removed.
+16:06:57 INFO  : The updated ps init files are copied from platform to folder '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit' in project 'fpadd_arm_app'.
+16:07:07 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:07:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:07:13 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+16:07:13 INFO  : 'jtag frequency' command is executed.
+16:07:13 INFO  : Context for 'APU' is selected.
+16:07:13 INFO  : System reset is completed.
+16:07:16 INFO  : 'after 3000' command is executed.
+16:07:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+16:07:18 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+16:07:18 INFO  : Context for 'APU' is selected.
+16:07:18 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+16:07:18 INFO  : 'configparams force-mem-access 1' command is executed.
+16:07:18 INFO  : Context for 'APU' is selected.
+16:07:19 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+16:07:19 INFO  : 'ps7_init' command is executed.
+16:07:19 INFO  : 'ps7_post_config' command is executed.
+16:07:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:07:19 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:07:19 INFO  : 'configparams force-mem-access 0' command is executed.
+16:07:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:07:19 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:07:19 INFO  : 'con' command is executed.
+16:07:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:07:19 INFO  : Disconnected from the channel tcfchan#83.
+16:08:12 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:08:29 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:08:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:08:37 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+16:08:37 INFO  : 'jtag frequency' command is executed.
+16:08:37 INFO  : Context for 'APU' is selected.
+16:08:37 INFO  : System reset is completed.
+16:08:40 INFO  : 'after 3000' command is executed.
+16:08:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+16:08:42 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+16:08:42 INFO  : Context for 'APU' is selected.
+16:08:42 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+16:08:42 INFO  : 'configparams force-mem-access 1' command is executed.
+16:08:42 INFO  : Context for 'APU' is selected.
+16:08:42 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+16:08:43 INFO  : 'ps7_init' command is executed.
+16:08:43 INFO  : 'ps7_post_config' command is executed.
+16:08:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:08:43 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:08:43 INFO  : 'configparams force-mem-access 0' command is executed.
+16:08:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:08:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:08:43 INFO  : 'con' command is executed.
+16:08:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:08:43 INFO  : Disconnected from the channel tcfchan#85.
+16:09:09 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:09:24 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:09:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:09:35 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+16:09:35 INFO  : 'jtag frequency' command is executed.
+16:09:35 INFO  : Context for 'APU' is selected.
+16:09:35 INFO  : System reset is completed.
+16:09:38 INFO  : 'after 3000' command is executed.
+16:09:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+16:09:41 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+16:09:41 INFO  : Context for 'APU' is selected.
+16:09:41 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+16:09:41 INFO  : 'configparams force-mem-access 1' command is executed.
+16:09:41 INFO  : Context for 'APU' is selected.
+16:09:41 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+16:09:41 INFO  : 'ps7_init' command is executed.
+16:09:41 INFO  : 'ps7_post_config' command is executed.
+16:09:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:09:41 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:09:41 INFO  : 'configparams force-mem-access 0' command is executed.
+16:09:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:09:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:09:41 INFO  : 'con' command is executed.
+16:09:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:09:41 INFO  : Disconnected from the channel tcfchan#87.
+16:10:47 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:11:02 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:11:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:11:12 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+16:11:12 INFO  : 'jtag frequency' command is executed.
+16:11:12 INFO  : Context for 'APU' is selected.
+16:11:12 INFO  : System reset is completed.
+16:11:15 INFO  : 'after 3000' command is executed.
+16:11:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+16:11:17 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+16:11:17 INFO  : Context for 'APU' is selected.
+16:11:17 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+16:11:17 INFO  : 'configparams force-mem-access 1' command is executed.
+16:11:18 INFO  : Context for 'APU' is selected.
+16:11:18 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+16:11:18 INFO  : 'ps7_init' command is executed.
+16:11:18 INFO  : 'ps7_post_config' command is executed.
+16:11:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:11:18 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:11:18 INFO  : 'configparams force-mem-access 0' command is executed.
+16:11:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:11:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:11:18 INFO  : 'con' command is executed.
+16:11:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:11:18 INFO  : Disconnected from the channel tcfchan#89.
+16:11:48 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:12:03 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:12:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:12:09 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+16:12:09 INFO  : 'jtag frequency' command is executed.
+16:12:09 INFO  : Context for 'APU' is selected.
+16:12:10 INFO  : System reset is completed.
+16:12:13 INFO  : 'after 3000' command is executed.
+16:12:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+16:12:15 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+16:12:15 INFO  : Context for 'APU' is selected.
+16:12:15 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+16:12:15 INFO  : 'configparams force-mem-access 1' command is executed.
+16:12:15 INFO  : Context for 'APU' is selected.
+16:12:15 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+16:12:15 INFO  : 'ps7_init' command is executed.
+16:12:15 INFO  : 'ps7_post_config' command is executed.
+16:12:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:12:15 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:12:15 INFO  : 'configparams force-mem-access 0' command is executed.
+16:12:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:12:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:12:15 INFO  : 'con' command is executed.
+16:12:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:12:15 INFO  : Disconnected from the channel tcfchan#91.
+16:12:49 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:13:06 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+16:13:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:13:11 INFO  : Jtag cable 'Digilent Zed 210248553221' is selected.
+16:13:11 INFO  : 'jtag frequency' command is executed.
+16:13:11 INFO  : Context for 'APU' is selected.
+16:13:11 INFO  : System reset is completed.
+16:13:14 INFO  : 'after 3000' command is executed.
+16:13:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}' command is executed.
+16:13:16 INFO  : Device configured successfully with "/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+16:13:16 INFO  : Context for 'APU' is selected.
+16:13:16 INFO  : Hardware design and registers information is loaded from '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+16:13:16 INFO  : 'configparams force-mem-access 1' command is executed.
+16:13:16 INFO  : Context for 'APU' is selected.
+16:13:16 INFO  : Sourcing of '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+16:13:16 INFO  : 'ps7_init' command is executed.
+16:13:16 INFO  : 'ps7_post_config' command is executed.
+16:13:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:13:17 INFO  : The application '/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:13:17 INFO  : 'configparams force-mem-access 0' command is executed.
+16:13:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248553221" && level==0 && jtag_device_ctx=="jsn-Zed-210248553221-23727093-0"}
+fpga -file /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:13:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:13:17 INFO  : 'con' command is executed.
+16:13:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:13:17 INFO  : Disconnected from the channel tcfchan#93.
+17:07:13 INFO  : Launching XSCT server: xsct -n  -interactive /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/temp_xsdb_launch_script.tcl
+17:07:17 INFO  : XSCT server has started successfully.
+17:07:17 INFO  : Successfully done setting XSCT server connection channel  
+17:07:17 INFO  : plnx-install-location is set to ''
+17:07:17 INFO  : Successfully done setting workspace for the tool. 
+17:07:19 INFO  : Platform repository initialization has completed.
+17:07:19 INFO  : Registering command handlers for Vitis TCF services
+17:07:20 INFO  : Successfully done query RDI_DATADIR 
+17:07:56 INFO  : Hardware specification for platform project 'fpadd_arm_plat' is updated.
+17:08:36 INFO  : Result from executing command 'getProjects': fpadd_arm_plat
+17:08:36 INFO  : Result from executing command 'getPlatforms': zedboard_202020_1|/opt/Xilinx/Vitis/2020.2/platforms/zedboard_202020_1/zedboard_202020_1.xpfm
+17:08:47 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:09:04 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:09:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:09:09 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+17:09:09 INFO  : 'jtag frequency' command is executed.
+17:09:09 INFO  : Context for 'APU' is selected.
+17:09:09 INFO  : System reset is completed.
+17:09:12 INFO  : 'after 3000' command is executed.
+17:09:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+17:09:15 INFO  : Device configured successfully with "/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+17:09:15 INFO  : Context for 'APU' is selected.
+17:09:15 INFO  : Hardware design and registers information is loaded from '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+17:09:15 INFO  : 'configparams force-mem-access 1' command is executed.
+17:09:15 INFO  : Context for 'APU' is selected.
+17:09:15 INFO  : Sourcing of '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+17:09:15 INFO  : 'ps7_init' command is executed.
+17:09:15 INFO  : 'ps7_post_config' command is executed.
+17:09:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:09:15 INFO  : The application '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:09:15 INFO  : 'configparams force-mem-access 0' command is executed.
+17:09:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:09:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:09:16 INFO  : 'con' command is executed.
+17:09:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:09:16 INFO  : Disconnected from the channel tcfchan#3.
+17:40:16 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:40:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:40:23 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+17:40:23 INFO  : 'jtag frequency' command is executed.
+17:40:23 INFO  : Context for 'APU' is selected.
+17:40:23 INFO  : System reset is completed.
+17:40:26 INFO  : 'after 3000' command is executed.
+17:40:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+17:40:29 INFO  : Device configured successfully with "/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+17:40:29 INFO  : Context for 'APU' is selected.
+17:40:29 INFO  : Hardware design and registers information is loaded from '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+17:40:29 INFO  : 'configparams force-mem-access 1' command is executed.
+17:40:29 INFO  : Context for 'APU' is selected.
+17:40:29 INFO  : Sourcing of '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+17:40:29 INFO  : 'ps7_init' command is executed.
+17:40:29 INFO  : 'ps7_post_config' command is executed.
+17:40:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:40:29 INFO  : The application '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:40:29 INFO  : 'configparams force-mem-access 0' command is executed.
+17:40:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:40:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:40:29 INFO  : 'con' command is executed.
+17:40:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:40:29 INFO  : Disconnected from the channel tcfchan#4.
+17:41:24 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:41:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:41:34 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+17:41:34 INFO  : 'jtag frequency' command is executed.
+17:41:34 INFO  : Context for 'APU' is selected.
+17:41:34 INFO  : System reset is completed.
+17:41:37 INFO  : 'after 3000' command is executed.
+17:41:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+17:41:40 INFO  : Device configured successfully with "/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+17:41:40 INFO  : Context for 'APU' is selected.
+17:41:40 INFO  : Hardware design and registers information is loaded from '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+17:41:40 INFO  : 'configparams force-mem-access 1' command is executed.
+17:41:40 INFO  : Context for 'APU' is selected.
+17:41:40 INFO  : Sourcing of '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+17:41:40 INFO  : 'ps7_init' command is executed.
+17:41:40 INFO  : 'ps7_post_config' command is executed.
+17:41:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:41:40 INFO  : The application '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:41:40 INFO  : 'configparams force-mem-access 0' command is executed.
+17:41:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:41:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:41:40 INFO  : 'con' command is executed.
+17:41:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:41:40 INFO  : Disconnected from the channel tcfchan#5.
+17:42:21 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:42:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:42:29 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+17:42:29 INFO  : 'jtag frequency' command is executed.
+17:42:29 INFO  : Context for 'APU' is selected.
+17:42:29 INFO  : System reset is completed.
+17:42:32 INFO  : 'after 3000' command is executed.
+17:42:32 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+17:42:34 INFO  : Device configured successfully with "/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+17:42:34 INFO  : Context for 'APU' is selected.
+17:42:34 INFO  : Hardware design and registers information is loaded from '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+17:42:34 INFO  : 'configparams force-mem-access 1' command is executed.
+17:42:34 INFO  : Context for 'APU' is selected.
+17:42:34 INFO  : Sourcing of '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+17:42:35 INFO  : 'ps7_init' command is executed.
+17:42:35 INFO  : 'ps7_post_config' command is executed.
+17:42:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:42:35 INFO  : The application '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:42:35 INFO  : 'configparams force-mem-access 0' command is executed.
+17:42:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:42:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:42:35 INFO  : 'con' command is executed.
+17:42:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:42:35 INFO  : Disconnected from the channel tcfchan#6.
+17:43:28 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:43:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:43:34 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+17:43:34 INFO  : 'jtag frequency' command is executed.
+17:43:34 INFO  : Context for 'APU' is selected.
+17:43:35 INFO  : System reset is completed.
+17:43:38 INFO  : 'after 3000' command is executed.
+17:43:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+17:43:40 INFO  : Device configured successfully with "/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+17:43:40 INFO  : Context for 'APU' is selected.
+17:43:40 INFO  : Hardware design and registers information is loaded from '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+17:43:40 INFO  : 'configparams force-mem-access 1' command is executed.
+17:43:40 INFO  : Context for 'APU' is selected.
+17:43:40 INFO  : Sourcing of '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+17:43:40 INFO  : 'ps7_init' command is executed.
+17:43:40 INFO  : 'ps7_post_config' command is executed.
+17:43:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:43:40 INFO  : The application '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:43:40 INFO  : 'configparams force-mem-access 0' command is executed.
+17:43:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:43:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:43:40 INFO  : 'con' command is executed.
+17:43:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:43:40 INFO  : Disconnected from the channel tcfchan#7.
+17:44:14 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:44:20 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:44:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:44:36 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+17:44:36 INFO  : 'jtag frequency' command is executed.
+17:44:36 INFO  : Context for 'APU' is selected.
+17:44:36 INFO  : System reset is completed.
+17:44:39 INFO  : 'after 3000' command is executed.
+17:44:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+17:44:42 INFO  : Device configured successfully with "/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+17:44:42 INFO  : Context for 'APU' is selected.
+17:44:42 INFO  : Hardware design and registers information is loaded from '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+17:44:42 INFO  : 'configparams force-mem-access 1' command is executed.
+17:44:42 INFO  : Context for 'APU' is selected.
+17:44:42 INFO  : Sourcing of '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+17:44:42 INFO  : 'ps7_init' command is executed.
+17:44:42 INFO  : 'ps7_post_config' command is executed.
+17:44:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:44:42 INFO  : The application '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:44:42 INFO  : 'configparams force-mem-access 0' command is executed.
+17:44:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:44:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:44:42 INFO  : 'con' command is executed.
+17:44:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:44:43 INFO  : Disconnected from the channel tcfchan#9.
+17:45:34 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:45:51 INFO  : Checking for BSP changes to sync application flags for project 'fpadd_arm_app'...
+17:45:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:45:57 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+17:45:57 INFO  : 'jtag frequency' command is executed.
+17:45:57 INFO  : Context for 'APU' is selected.
+17:45:57 INFO  : System reset is completed.
+17:46:00 INFO  : 'after 3000' command is executed.
+17:46:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+17:46:03 INFO  : Device configured successfully with "/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+17:46:03 INFO  : Context for 'APU' is selected.
+17:46:03 INFO  : Hardware design and registers information is loaded from '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+17:46:03 INFO  : 'configparams force-mem-access 1' command is executed.
+17:46:03 INFO  : Context for 'APU' is selected.
+17:46:03 INFO  : Sourcing of '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+17:46:03 INFO  : 'ps7_init' command is executed.
+17:46:03 INFO  : 'ps7_post_config' command is executed.
+17:46:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:46:03 INFO  : The application '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:46:03 INFO  : 'configparams force-mem-access 0' command is executed.
+17:46:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:46:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:46:03 INFO  : 'con' command is executed.
+17:46:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+17:46:03 INFO  : Disconnected from the channel tcfchan#11.
+17:47:59 INFO  : Launching XSCT server: xsct -n  -interactive /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/temp_xsdb_launch_script.tcl
+17:48:02 INFO  : XSCT server has started successfully.
+17:48:02 INFO  : Successfully done setting XSCT server connection channel  
+17:48:02 INFO  : plnx-install-location is set to ''
+17:48:02 INFO  : Successfully done setting workspace for the tool. 
+17:48:05 INFO  : Platform repository initialization has completed.
+17:48:05 INFO  : Successfully done query RDI_DATADIR 
+17:48:06 INFO  : Registering command handlers for Vitis TCF services
+19:07:20 INFO  : Launching XSCT server: xsct -n  -interactive /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/temp_xsdb_launch_script.tcl
+19:07:23 INFO  : XSCT server has started successfully.
+19:07:23 INFO  : plnx-install-location is set to ''
+19:07:23 INFO  : Successfully done setting XSCT server connection channel  
+19:07:23 INFO  : Successfully done setting workspace for the tool. 
+19:07:26 INFO  : Platform repository initialization has completed.
+19:07:26 INFO  : Successfully done query RDI_DATADIR 
+19:07:27 INFO  : Registering command handlers for Vitis TCF services
+19:08:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:08:12 INFO  : Jtag cable 'Digilent Zed 210248650917' is selected.
+19:08:12 INFO  : 'jtag frequency' command is executed.
+19:08:12 INFO  : Context for 'APU' is selected.
+19:08:12 INFO  : System reset is completed.
+19:08:15 INFO  : 'after 3000' command is executed.
+19:08:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}' command is executed.
+19:08:18 INFO  : Device configured successfully with "/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit"
+19:08:18 INFO  : Context for 'APU' is selected.
+19:08:18 INFO  : Hardware design and registers information is loaded from '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa'.
+19:08:18 INFO  : 'configparams force-mem-access 1' command is executed.
+19:08:18 INFO  : Context for 'APU' is selected.
+19:08:18 INFO  : Sourcing of '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl' is done.
+19:08:18 INFO  : 'ps7_init' command is executed.
+19:08:18 INFO  : 'ps7_post_config' command is executed.
+19:08:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:08:18 INFO  : The application '/home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:08:18 INFO  : 'configparams force-mem-access 0' command is executed.
+19:08:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650917" && level==0 && jtag_device_ctx=="jsn-Zed-210248650917-23727093-0"}
+fpga -file /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/bitstream/fpadd_arm_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_plat/export/fpadd_arm_plat/hw/fpadd_arm_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/fpadd_arm_workspace/fpadd_arm_app/Debug/fpadd_arm_app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:08:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:08:18 INFO  : 'con' command is executed.
+19:08:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:08:19 INFO  : Disconnected from the channel tcfchan#1.

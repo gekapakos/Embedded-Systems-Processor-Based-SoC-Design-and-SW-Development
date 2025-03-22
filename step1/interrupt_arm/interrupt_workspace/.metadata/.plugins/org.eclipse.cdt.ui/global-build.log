@@ -1,0 +1,17 @@
+Nothing to build in platform 'interrupt_arm'
+
+12:43:37 **** Incremental Build of configuration Debug for project step2_app ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+Building file: ../src/timer_util.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timer_util.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I/home/inf2020/gkapakos/Desktop/Embedded/labs/lab2/step1/interrupt_arm/interrupt_workspace/interrupt_arm/export/interrupt_arm/sw/interrupt_arm/standalone_domain/bspinclude/include -MMD -MP -MF"src/timer_util.d" -MT"src/timer_util.o" -o "src/timer_util.o" "../src/timer_util.c"
+../src/timer_util.c:5:10: fatal error: core_matrix.h: No such file or directory
+    5 | #include "core_matrix.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [src/subdir.mk:23: src/timer_util.o] Error 1
+make: *** [makefile:34: all] Error 2

@@ -1,0 +1,74 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.53689",
+   "Default View_TopLeft":"-453,-41",
+   "ExpandedHierarchyInLayout":"",
+   "PinnedPorts":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 4 -x 1230 -y 650 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 4 -x 1230 -y 670 -defaultsOSRD
+preplace port swsbtnsdd_8bits -pg 1 -lvl 4 -x 1230 -y 450 -defaultsOSRD
+preplace port btns_5bits -pg 1 -lvl 4 -x 1230 -y 740 -defaultsOSRD
+preplace port d1_0 -pg 1 -lvl 4 -x 1230 -y 310 -defaultsOSRD
+preplace port an1_0 -pg 1 -lvl 4 -x 1230 -y 230 -defaultsOSRD
+preplace port g0_0 -pg 1 -lvl 4 -x 1230 -y 210 -defaultsOSRD
+preplace port c1_0 -pg 1 -lvl 4 -x 1230 -y 290 -defaultsOSRD
+preplace port f1_0 -pg 1 -lvl 4 -x 1230 -y 350 -defaultsOSRD
+preplace port b1_0 -pg 1 -lvl 4 -x 1230 -y 270 -defaultsOSRD
+preplace port a1_0 -pg 1 -lvl 4 -x 1230 -y 250 -defaultsOSRD
+preplace port e1_0 -pg 1 -lvl 4 -x 1230 -y 330 -defaultsOSRD
+preplace port d0_0 -pg 1 -lvl 4 -x 1230 -y 150 -defaultsOSRD
+preplace port an0_0 -pg 1 -lvl 4 -x 1230 -y 70 -defaultsOSRD
+preplace port c0_0 -pg 1 -lvl 4 -x 1230 -y 130 -defaultsOSRD
+preplace port f0_0 -pg 1 -lvl 4 -x 1230 -y 190 -defaultsOSRD
+preplace port b0_0 -pg 1 -lvl 4 -x 1230 -y 110 -defaultsOSRD
+preplace port e0_0 -pg 1 -lvl 4 -x 1230 -y 170 -defaultsOSRD
+preplace port a0_0 -pg 1 -lvl 4 -x 1230 -y 90 -defaultsOSRD
+preplace port g1_0 -pg 1 -lvl 4 -x 1230 -y 370 -defaultsOSRD
+preplace portBus leds_0 -pg 1 -lvl 4 -x 1230 -y 50 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 230 -y 690 -defaultsOSRD
+preplace inst sw_8bit -pg 1 -lvl 3 -x 930 -y 450 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 620 -y 490 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 230 -y 330 -defaultsOSRD
+preplace inst btns_5bit -pg 1 -lvl 3 -x 930 -y 750 -defaultsOSRD
+preplace inst fpadd_ip_0 -pg 1 -lvl 3 -x 930 -y 170 -defaultsOSRD
+preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 1 1 460 350n
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 470 330 800
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 30 430 450 660 790
+preplace netloc btns_5bit_ip2intc_irpt 1 0 4 30 830 NJ 830 NJ 830 1130
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 20 230 430
+preplace netloc fpadd_ip_0_d1 1 3 1 1080J 270n
+preplace netloc fpadd_ip_0_an1 1 3 1 1120J 190n
+preplace netloc fpadd_ip_0_g0 1 3 1 1130J 170n
+preplace netloc fpadd_ip_0_c1 1 3 1 1090J 250n
+preplace netloc fpadd_ip_0_f1 1 3 1 1060J 310n
+preplace netloc fpadd_ip_0_b1 1 3 1 1100J 230n
+preplace netloc fpadd_ip_0_leds 1 3 1 1210J 10n
+preplace netloc fpadd_ip_0_a1 1 3 1 1110J 210n
+preplace netloc fpadd_ip_0_e1 1 3 1 1070J 290n
+preplace netloc fpadd_ip_0_d0 1 3 1 1160J 110n
+preplace netloc fpadd_ip_0_an0 1 3 1 1200J 30n
+preplace netloc fpadd_ip_0_c0 1 3 1 1170J 90n
+preplace netloc fpadd_ip_0_f0 1 3 1 1140J 150n
+preplace netloc fpadd_ip_0_b0 1 3 1 1180J 70n
+preplace netloc fpadd_ip_0_e0 1 3 1 1150J 130n
+preplace netloc fpadd_ip_0_a0 1 3 1 1190J 50n
+preplace netloc fpadd_ip_0_g1 1 3 1 1050J 330n
+preplace netloc sw_8bit_GPIO 1 3 1 NJ 450
+preplace netloc btns_5bit_GPIO 1 3 1 NJ 740
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 780 490n
+preplace netloc processing_system7_0_DDR 1 1 3 NJ 650 NJ 650 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 670 NJ 670 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 440 390n
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 780 430n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 770 150n
+levelinfo -pg 1 0 230 620 930 1230
+pagesize -pg 1 -db -bbox -sgen 0 -40 1390 840
+"
+}
+{
+   "da_axi4_cnt":"2",
+   "da_board_cnt":"2",
+   "da_ps7_cnt":"1"
+}

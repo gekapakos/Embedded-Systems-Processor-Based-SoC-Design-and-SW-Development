@@ -1,0 +1,159 @@
+timestamp=[2024-04-13 13:24:55], mode=WORKBENCH_START, duration=0:00:06.305, duration_ms=6305, data={}
+timestamp=[2024-04-13 13:24:55], mode=WORKBENCH_UI_INIT, duration=0:00:00.419, duration_ms=419, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2024-04-13 13:24:59], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:03.266, duration_ms=3266, data={}
+timestamp=[2024-04-13 13:25:59], mode=PLATFORM_CREATION, duration=0:00:16.595, duration_ms=16595, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2024-04-13 13:26:28], mode=PLATFORM_GENERATION, duration=0:00:19.171, duration_ms=19171, data={name=fpadd_arm_plat}
+timestamp=[2024-04-13 13:27:10], mode=APP_CREATION, duration=0:00:08.684, duration_ms=8684, data={name=fpadd_arm_app, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=fpadd_arm_plat, application_type=application}
+timestamp=[2024-04-13 13:27:51], mode=BUILD, duration=0:00:00.819, duration_ms=819, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:27:56], mode=BUILD, duration=0:00:00.491, duration_ms=491, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:28:04], mode=BUILD, duration=0:00:07.044, duration_ms=7044, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:29:05], mode=BUILD, duration=0:00:01.053, duration_ms=1053, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:29:13], mode=BUILD, duration=0:00:07.360, duration_ms=7360, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:29:18], mode=BUILD, duration=0:00:00.638, duration_ms=638, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:29:29], mode=BUILD, duration=0:00:09.854, duration_ms=9854, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:32:11], mode=BUILD, duration=0:00:01.025, duration_ms=1025, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:32:22], mode=BUILD, duration=0:00:09.710, duration_ms=9710, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:51:01], mode=PLATFORM_CREATION, duration=0:00:13.178, duration_ms=13178, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2024-04-13 13:51:32], mode=PLATFORM_GENERATION, duration=0:00:18.150, duration_ms=18150, data={name=fpadd_arm_plat}
+timestamp=[2024-04-13 13:52:22], mode=APP_CREATION, duration=0:00:08.155, duration_ms=8155, data={name=fpadd_arm_app, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=fpadd_arm_plat, application_type=application}
+timestamp=[2024-04-13 13:53:46], mode=BUILD, duration=0:00:01.134, duration_ms=1134, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:53:56], mode=BUILD, duration=0:00:09.917, duration_ms=9917, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:54:11], mode=BUILD, duration=0:00:00.944, duration_ms=944, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:54:22], mode=BUILD, duration=0:00:09.471, duration_ms=9471, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 13:59:48], mode=BUILD, duration=0:00:00.846, duration_ms=846, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:10:30], mode=PLATFORM_GENERATION, duration=0:00:07.502, duration_ms=7502, data={name=fpadd_arm_plat}
+timestamp=[2024-04-13 14:10:44], mode=BUILD, duration=0:00:01.064, duration_ms=1064, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:11:00], mode=BUILD, duration=0:00:09.714, duration_ms=9714, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:11:02], mode=BUILD, duration=0:00:00.650, duration_ms=650, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:22:50], mode=PLATFORM_GENERATION, duration=0:00:07.707, duration_ms=7707, data={name=fpadd_arm_plat}
+timestamp=[2024-04-13 14:23:11], mode=BUILD, duration=0:00:01.138, duration_ms=1138, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:23:27], mode=BUILD, duration=0:00:09.802, duration_ms=9802, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:23:33], mode=BUILD, duration=0:00:00.384, duration_ms=384, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:35:04], mode=PLATFORM_GENERATION, duration=0:00:07.495, duration_ms=7495, data={name=fpadd_arm_plat}
+timestamp=[2024-04-13 14:35:16], mode=BUILD, duration=0:00:01.098, duration_ms=1098, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:35:33], mode=BUILD, duration=0:00:10.002, duration_ms=10002, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:35:40], mode=BUILD, duration=0:00:00.386, duration_ms=386, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:45:16], mode=PLATFORM_GENERATION, duration=0:00:07.606, duration_ms=7606, data={name=fpadd_arm_plat}
+timestamp=[2024-04-13 14:45:33], mode=BUILD, duration=0:00:01.029, duration_ms=1029, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:45:50], mode=BUILD, duration=0:00:10.087, duration_ms=10087, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:45:52], mode=BUILD, duration=0:00:00.387, duration_ms=387, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:51:22], mode=BUILD, duration=0:00:01.024, duration_ms=1024, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:51:33], mode=BUILD, duration=0:00:09.855, duration_ms=9855, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:51:34], mode=BUILD, duration=0:00:00.644, duration_ms=644, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:53:05], mode=BUILD, duration=0:00:00.839, duration_ms=839, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:53:16], mode=BUILD, duration=0:00:09.850, duration_ms=9850, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:53:23], mode=BUILD, duration=0:00:00.397, duration_ms=397, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:56:24], mode=BUILD, duration=0:00:01.004, duration_ms=1004, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:56:35], mode=BUILD, duration=0:00:09.749, duration_ms=9749, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:56:56], mode=BUILD, duration=0:00:00.387, duration_ms=387, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:58:49], mode=BUILD, duration=0:00:00.939, duration_ms=939, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:58:59], mode=BUILD, duration=0:00:09.826, duration_ms=9826, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:59:46], mode=BUILD, duration=0:00:00.735, duration_ms=735, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 14:59:57], mode=BUILD, duration=0:00:09.632, duration_ms=9632, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:00:05], mode=BUILD, duration=0:00:00.387, duration_ms=387, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:01:10], mode=BUILD, duration=0:00:00.845, duration_ms=845, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:01:20], mode=BUILD, duration=0:00:09.673, duration_ms=9673, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:01:33], mode=BUILD, duration=0:00:00.391, duration_ms=391, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:02:49], mode=BUILD, duration=0:00:00.790, duration_ms=790, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:02:59], mode=BUILD, duration=0:00:09.503, duration_ms=9503, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:03:07], mode=BUILD, duration=0:00:00.387, duration_ms=387, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:04:01], mode=BUILD, duration=0:00:00.841, duration_ms=841, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:04:11], mode=BUILD, duration=0:00:09.566, duration_ms=9566, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:04:15], mode=BUILD, duration=0:00:00.415, duration_ms=415, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:05:11], mode=BUILD, duration=0:00:00.841, duration_ms=841, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:05:21], mode=BUILD, duration=0:00:09.415, duration_ms=9415, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:05:29], mode=BUILD, duration=0:00:00.391, duration_ms=391, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:07:00], mode=BUILD, duration=0:00:00.838, duration_ms=838, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:07:11], mode=BUILD, duration=0:00:09.671, duration_ms=9671, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:07:19], mode=BUILD, duration=0:00:00.387, duration_ms=387, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:08:48], mode=BUILD, duration=0:00:00.837, duration_ms=837, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:08:58], mode=BUILD, duration=0:00:09.558, duration_ms=9558, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:10:24], mode=BUILD, duration=0:00:00.385, duration_ms=385, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:10:34], mode=BUILD, duration=0:00:09.808, duration_ms=9808, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:10:51], mode=BUILD, duration=0:00:00.386, duration_ms=386, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:19:08], mode=PLATFORM_GENERATION, duration=0:00:07.598, duration_ms=7598, data={name=fpadd_arm_plat}
+timestamp=[2024-04-13 15:19:17], mode=BUILD, duration=0:00:01.084, duration_ms=1084, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:19:33], mode=BUILD, duration=0:00:10.001, duration_ms=10001, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:19:40], mode=BUILD, duration=0:00:00.391, duration_ms=391, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:29:08], mode=PLATFORM_GENERATION, duration=0:00:07.702, duration_ms=7702, data={name=fpadd_arm_plat}
+timestamp=[2024-04-13 15:29:28], mode=BUILD, duration=0:00:01.082, duration_ms=1082, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:29:45], mode=BUILD, duration=0:00:10.000, duration_ms=10000, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:30:05], mode=BUILD, duration=0:00:00.387, duration_ms=387, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:32:11], mode=BUILD, duration=0:00:01.118, duration_ms=1118, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:32:21], mode=BUILD, duration=0:00:09.804, duration_ms=9804, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:32:23], mode=BUILD, duration=0:00:00.388, duration_ms=388, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:33:47], mode=BUILD, duration=0:00:00.842, duration_ms=842, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:33:58], mode=BUILD, duration=0:00:09.524, duration_ms=9524, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:34:02], mode=BUILD, duration=0:00:00.390, duration_ms=390, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:35:40], mode=BUILD, duration=0:00:00.841, duration_ms=841, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:35:50], mode=BUILD, duration=0:00:09.600, duration_ms=9600, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:35:59], mode=BUILD, duration=0:00:00.389, duration_ms=389, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:36:11], mode=BUILD, duration=0:00:00.388, duration_ms=388, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:37:32], mode=BUILD, duration=0:00:00.846, duration_ms=846, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:37:42], mode=BUILD, duration=0:00:09.570, duration_ms=9570, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:37:47], mode=BUILD, duration=0:00:00.385, duration_ms=385, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:44:13], mode=BUILD, duration=0:00:01.035, duration_ms=1035, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:44:23], mode=BUILD, duration=0:00:09.839, duration_ms=9839, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:44:25], mode=BUILD, duration=0:00:00.636, duration_ms=636, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:45:16], mode=BUILD, duration=0:00:00.840, duration_ms=840, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:45:26], mode=BUILD, duration=0:00:09.527, duration_ms=9527, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:45:40], mode=BUILD, duration=0:00:00.418, duration_ms=418, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:47:07], mode=BUILD, duration=0:00:00.889, duration_ms=889, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:47:18], mode=BUILD, duration=0:00:09.830, duration_ms=9830, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:47:20], mode=BUILD, duration=0:00:00.403, duration_ms=403, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:48:30], mode=BUILD, duration=0:00:00.846, duration_ms=846, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:48:41], mode=BUILD, duration=0:00:09.904, duration_ms=9904, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:48:49], mode=BUILD, duration=0:00:00.385, duration_ms=385, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:51:20], mode=BUILD, duration=0:00:00.998, duration_ms=998, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:51:31], mode=BUILD, duration=0:00:09.714, duration_ms=9714, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:51:40], mode=BUILD, duration=0:00:00.439, duration_ms=439, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:54:01], mode=BUILD, duration=0:00:01.050, duration_ms=1050, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:54:11], mode=BUILD, duration=0:00:09.694, duration_ms=9694, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:54:53], mode=BUILD, duration=0:00:00.385, duration_ms=385, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:56:16], mode=BUILD, duration=0:00:00.907, duration_ms=907, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:56:26], mode=BUILD, duration=0:00:09.555, duration_ms=9555, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 15:56:35], mode=BUILD, duration=0:00:00.386, duration_ms=386, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:05:39], mode=BUILD, duration=0:00:01.022, duration_ms=1022, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:05:50], mode=BUILD, duration=0:00:09.613, duration_ms=9613, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:06:26], mode=PLATFORM_GENERATION, duration=0:00:07.548, duration_ms=7548, data={name=fpadd_arm_plat}
+timestamp=[2024-04-13 16:06:51], mode=BUILD, duration=0:00:00.838, duration_ms=838, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:07:07], mode=BUILD, duration=0:00:09.562, duration_ms=9562, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:07:07], mode=BUILD, duration=0:00:00.386, duration_ms=386, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:08:13], mode=BUILD, duration=0:00:00.840, duration_ms=840, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:08:23], mode=BUILD, duration=0:00:09.702, duration_ms=9702, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:08:29], mode=BUILD, duration=0:00:00.395, duration_ms=395, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:09:10], mode=BUILD, duration=0:00:00.840, duration_ms=840, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:09:20], mode=BUILD, duration=0:00:09.493, duration_ms=9493, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:09:25], mode=BUILD, duration=0:00:00.388, duration_ms=388, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:10:48], mode=BUILD, duration=0:00:00.840, duration_ms=840, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:10:58], mode=BUILD, duration=0:00:09.345, duration_ms=9345, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:11:02], mode=BUILD, duration=0:00:00.391, duration_ms=391, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:11:48], mode=BUILD, duration=0:00:00.788, duration_ms=788, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:11:58], mode=BUILD, duration=0:00:09.297, duration_ms=9297, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:12:03], mode=BUILD, duration=0:00:00.387, duration_ms=387, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:12:50], mode=BUILD, duration=0:00:00.838, duration_ms=838, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:13:00], mode=BUILD, duration=0:00:09.628, duration_ms=9628, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-13 16:13:06], mode=BUILD, duration=0:00:00.388, duration_ms=388, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:07:19], mode=WORKBENCH_START, duration=0:00:11.683, duration_ms=11683, data={}
+timestamp=[2024-04-16 17:07:19], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.047, duration_ms=47, data={}
+timestamp=[2024-04-16 17:07:21], mode=WORKBENCH_UI_INIT, duration=0:00:02.274, duration_ms=2274, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,fpadd_arm_app,fpadd_arm_app_system,fpadd_arm_plat}
+timestamp=[2024-04-16 17:08:39], mode=PLATFORM_GENERATION, duration=0:00:16.419, duration_ms=16419, data={name=fpadd_arm_plat}
+timestamp=[2024-04-16 17:08:49], mode=BUILD, duration=0:00:00.648, duration_ms=648, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:08:59], mode=BUILD, duration=0:00:09.388, duration_ms=9388, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:09:04], mode=BUILD, duration=0:00:00.398, duration_ms=398, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:40:16], mode=BUILD, duration=0:00:00.649, duration_ms=649, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:41:25], mode=BUILD, duration=0:00:00.636, duration_ms=636, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:42:22], mode=BUILD, duration=0:00:00.641, duration_ms=641, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:43:29], mode=BUILD, duration=0:00:00.586, duration_ms=586, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:44:14], mode=BUILD, duration=0:00:00.638, duration_ms=638, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:44:21], mode=BUILD, duration=0:00:00.384, duration_ms=384, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:44:31], mode=BUILD, duration=0:00:09.047, duration_ms=9047, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:45:35], mode=BUILD, duration=0:00:00.589, duration_ms=589, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:45:45], mode=BUILD, duration=0:00:09.215, duration_ms=9215, data={name=fpadd_arm_app_system, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:45:51], mode=BUILD, duration=0:00:00.384, duration_ms=384, data={name=fpadd_arm_app, configuration=Debug, clean_build=false}
+timestamp=[2024-04-16 17:48:03], mode=WORKBENCH_START, duration=0:00:10.107, duration_ms=10107, data={}
+timestamp=[2024-04-16 17:48:05], mode=WORKBENCH_UI_INIT, duration=0:00:01.197, duration_ms=1197, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,fpadd_arm_app,fpadd_arm_app_system,fpadd_arm_plat}
+timestamp=[2024-04-16 17:48:05], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.090, duration_ms=90, data={}
+timestamp=[2024-04-16 19:07:25], mode=WORKBENCH_START, duration=0:00:10.111, duration_ms=10111, data={}
+timestamp=[2024-04-16 19:07:26], mode=WORKBENCH_UI_INIT, duration=0:00:01.242, duration_ms=1242, data={editors_count=4, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,fpadd_arm_app,fpadd_arm_app_system,fpadd_arm_plat}
+timestamp=[2024-04-16 19:07:26], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.132, duration_ms=132, data={}

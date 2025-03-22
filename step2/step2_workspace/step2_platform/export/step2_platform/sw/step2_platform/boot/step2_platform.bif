@@ -1,0 +1,7 @@
+/*step2_platform*/
+the_ROM_image:
+{
+  [bootloader]<step2_platform/boot/fsbl.elf>
+   <bitstream> 
+  <elf,ps7_cortexa9_0>
+}

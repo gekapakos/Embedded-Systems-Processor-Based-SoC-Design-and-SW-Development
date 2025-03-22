@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Apr 18 09:15:27 2024
+# Process ID: 10840
+# Current directory: /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/ip_repo/edit_fpadd_ip_v1_0.runs/synth_1
+# Command line: vivado -log fpadd_ip_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source fpadd_ip_v1_0.tcl
+# Log file: /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/ip_repo/edit_fpadd_ip_v1_0.runs/synth_1/fpadd_ip_v1_0.vds
+# Journal file: /home/inf2018/gisotirios/Desktop/Embedded/lab2/step3/ip_repo/edit_fpadd_ip_v1_0.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source fpadd_ip_v1_0.tcl -notrace
